@@ -19,3 +19,24 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.pre-wrapper {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+}
+
+pre {
+  white-space: pre;
+  font-family: monospace;
+  font-size: 6px;
+  line-height: 6px;
+  letter-spacing: unset;
+  transform: unset;
+  overflow-y: hidden;
+  display: block;
+  width: 100%;
+}
