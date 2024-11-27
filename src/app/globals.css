@@ -3,76 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --background: linear-gradient(black, white);
+  --background: #bbbbbb;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #010101;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
-  /* background: var(--background); */
-  background: linear-gradient(60deg, black, #333333, black);
+  background: var(--background);
+  background-size: 100% 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@keyframes rotateBackgroundGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.pre-wrapper {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  color: black;
+.yesno {
+  font-family: Courier;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  color: red;
+  font-size: 48px;
   font-weight: bold;
-
-  &.bgPink {
-    background-color: pink;
-  }
-
-  &.bgYellow {
-    background-color: yellow;
-  }
-
-  &.bgLime {
-    background-color: lime;
-  }
-
-  &,
-  &.bgGadient {
-    background: linear-gradient(15deg, pink, lime, orange, yellow, red);
-    background-size: 1000% 400%;
-    animation: rotateBackgroundGradient 20s ease-in-out infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  padding: 1rem;
 }
 
-pre {
-  /* --size: calc(5px + 0.14vw); */
-  --size: 6px;
+.answer {
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(100vh * 0.6);
+  line-height: 1;
+  font-weight: 700;
+  color: red;
 
-  white-space: pre;
-  font-family: monospace;
-  font-size: var(--size);
-  line-height: var(--size);
-  letter-spacing: unset;
-  transform: unset;
-  overflow-y: hidden;
-  display: block;
-  width: 100%;
+  &.answer--yes {
+    color: lime;
+  }
 }

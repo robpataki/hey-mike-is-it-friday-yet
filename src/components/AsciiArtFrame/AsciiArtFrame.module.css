@@ -1,0 +1,68 @@
+@keyframes rotateBackgroundGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.artworkWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  overflow: hidden;
+  color: purple;
+  font-weight: bold;
+
+  &.bgPink {
+    background-color: pink;
+  }
+
+  &.bgYellow {
+    background-color: yellow;
+  }
+
+  &.bgLime {
+    background-color: lime;
+  }
+
+  &.bgGadient {
+    /* background: linear-gradient(
+      15deg,
+      pink,
+      white,
+      lime,
+      orange,
+      yellow,
+      white,
+      purple,
+      red
+    ); */
+    background: linear-gradient(45deg, black, purple);
+    /* background: linear-gradient(15deg, black, purple, red, blue, black); */
+    /* background-size: 200% 400%; */
+    /* animation: rotateBackgroundGradient 20s ease-in-out infinite; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.artwork {
+  --size: calc(100vw / 400 * 1.9);
+
+  width: 100%;
+  white-space: pre;
+  font-family: monospace;
+  font-size: var(--size);
+  line-height: var(--size);
+  letter-spacing: unset;
+  transform: unset;
+  overflow-y: hidden;
+  display: block;
+}
