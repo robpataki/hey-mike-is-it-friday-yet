@@ -50,7 +50,7 @@ export default function Page() {
 
   return (
     <>
-      <h1 className="sr-only">Is it Friday yet?</h1>
+      <h1 className="sr-only">Hey Mike, is it Friday yet?</h1>
       <Outcome isPositive={isItFriday}>{outcomeText}</Outcome>
       {todaysArtwork ? (
         <AsciiArtFrame
