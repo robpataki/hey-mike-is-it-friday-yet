@@ -9,7 +9,7 @@ type Artwork = { photo: string; id: string };
 
 export default function IsItFriday() {
   const [todaysArtwork, setTodaysArtwork] = useState<Artwork | undefined>();
-  const isItFriday = new Date().getDay() === 5;
+  const isItFriday = new Date().getDay() === 4;
 
   // Gather artwork from the data
   const { days: daysData } = data;
