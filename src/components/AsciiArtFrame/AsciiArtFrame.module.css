@@ -54,7 +54,8 @@
 }
 
 .artwork {
-  --size: calc(100vw / 400 * 1.9);
+  /* --size: calc(100vw / 400 * 1.9); */
+  --size: calc(100vw / 400 * 1.5);
 
   width: 100%;
   white-space: pre;
@@ -65,4 +66,8 @@
   transform: unset;
   overflow-y: hidden;
   display: block;
+
+  @media screen and (max-aspect-ratio: 1.75 / 1) {
+    --size: calc(100vh / 120);
+  }
 }

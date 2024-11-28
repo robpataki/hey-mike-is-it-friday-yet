@@ -1,5 +1,8 @@
+"use client";
+
 import AsciiArtFrame from "@/components/AsciiArtFrame/AsciiArtFrame";
 import { data } from "../../data/data";
+import { Outcome } from "@/components/Outcome/Outcome";
 
 export default function IsItFriday() {
   const todaysDate = new Date();
@@ -16,21 +19,27 @@ export default function IsItFriday() {
   });
 
   // Shuffle the artworks
-  const mixedArtworks = [...artworks].sort(() => Math.random() - 0.5);
+  // const mixedArtworks = [...artworks].sort(() => Math.random() - 0.5);
+  const mixedArtworks = [...artworks];
 
   // Pick today's artwork
   const todaysArtwork = isItFriday
     ? mixedArtworks.find((artwork) => artwork.id === "friday")
-    : mixedArtworks.find((artwork) => artwork.id !== "friday");
+    : mixedArtworks.find((artwork) => artwork.id === "tuesday");
 
-  const answerClassName = `answer ${isItFriday ? "answer--yes" : ""}`;
-  const answerText = isItFriday ? "YES" : "NO";
+  const outcomeText = isItFriday ? "YES" : "NO";
+
+  const rotateArtwork = () => {
+    console.log("rotate!");
+  };
 
   return (
     <>
       <h1 className="sr-only">Is it Friday yet?</h1>
-      <div className={answerClassName}>{answerText}</div>
-      {todaysArtwork ? <AsciiArtFrame asciiArt={todaysArtwork.photo} /> : null}
+      <Outcome isPositive={isItFriday}>{outcomeText}</Outcome>
+      {todaysArtwork ? (
+        <AsciiArtFrame asciiArt={todaysArtwork.photo} onClick={rotateArtwork} />
+      ) : null}
     </>
   );
 }

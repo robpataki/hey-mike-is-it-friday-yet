@@ -1,0 +1,16 @@
+.outcome {
+  position: absolute;
+  top: 50%;
+  left: 5vw;
+  text-transform: uppercase;
+  font-family: Verdana;
+  transform: translate(0, -50%);
+  font-size: calc(100vh * 0.4);
+  line-height: 1;
+  font-weight: 700;
+  color: red;
+
+  &.outcome--yes {
+    color: lime;
+  }
+}

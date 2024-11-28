@@ -19,32 +19,10 @@ body {
   background: var(--background);
   background-size: 100% 100%;
   font-family: Arial, Helvetica, sans-serif;
-}
+  overflow: hidden;
 
-.yesno {
-  font-family: Courier;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: black;
-  color: red;
-  font-size: 48px;
-  font-weight: bold;
-  padding: 1rem;
-}
-
-.answer {
-  text-transform: uppercase;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: calc(100vh * 0.6);
-  line-height: 1;
-  font-weight: 700;
-  color: red;
-
-  &.answer--yes {
-    color: lime;
+  ::selection {
+    color: red;
+    background-color: yellow;
   }
 }
