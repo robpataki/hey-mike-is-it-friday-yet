@@ -1,4 +1,5 @@
 // import type { Metadata } from "next";
+import Head from "next/head";
 import "./globals.css";
 
 /* export const metadata: Metadata = {
@@ -14,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <Head>
+        <link rel="icon" href="/images/favicon.ico" sizes="any" />
+      </Head>
       <body>{children}</body>
     </html>
   );

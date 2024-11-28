@@ -8,7 +8,7 @@ import { Outcome } from "@/components/Outcome/Outcome";
 
 type Artwork = { photo: string; id: string };
 
-const isItFriday = new Date().getDay() === 4;
+const isItFriday = new Date().getDay() === 5;
 
 // Gather artwork from the data
 const { days: daysData } = data;
