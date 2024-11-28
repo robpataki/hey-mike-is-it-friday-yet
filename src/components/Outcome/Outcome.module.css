@@ -10,7 +10,7 @@
   font-weight: 700;
   color: red;
 
-  &.outcome--yes {
+  &.outcomeYes {
     color: lime;
   }
 }

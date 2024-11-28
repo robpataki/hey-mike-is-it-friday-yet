@@ -54,8 +54,7 @@
 }
 
 .artwork {
-  /* --size: calc(100vw / 400 * 1.9); */
-  --size: calc(100vw / 400 * 1.5);
+  --size: calc(100vw / 400 * 1.9);
 
   width: 100%;
   white-space: pre;
