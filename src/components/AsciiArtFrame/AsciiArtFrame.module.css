@@ -32,6 +32,7 @@
     background-color: lime;
   }
 
+  &,
   &.bgGadient {
     /* background: linear-gradient(
       15deg,
@@ -44,9 +45,9 @@
       purple,
       red
     ); */
-    background: linear-gradient(45deg, black, purple);
-    /* background: linear-gradient(15deg, black, purple, red, blue, black); */
-    /* background-size: 200% 400%; */
+    /* background: linear-gradient(45deg, black, purple); */
+    background: linear-gradient(45deg, blue, purple, indigo, blue);
+    /* background-size: 1000% 400%; */
     /* animation: rotateBackgroundGradient 20s ease-in-out infinite; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -54,7 +55,7 @@
 }
 
 .artwork {
-  --size: calc(100vw / 400 * 1.9);
+  --size: calc(100vw / 400 * 2);
 
   width: 100%;
   white-space: pre;
