@@ -1,7 +1,7 @@
 .wrapper {
-  --bg-color-off: lime;
-  --bg-color-on: indigo;
-  --color-off: indigo;
+  --bg-color-off: black;
+  --bg-color-on: black;
+  --color-off: red;
   --color-on: lime;
 
   --transition-easing-method: var(--tr-ease-out-expo);

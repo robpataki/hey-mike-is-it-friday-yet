@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./ToggleButton.module.css";
 
 type FunkyToggleButtonProps = {
   onToggleFunkyMode: (isFunkyModeOn: boolean) => void;
+  isToggledByDefault?: boolean;
 };
 
 export const FunkyToggleButton = (props: FunkyToggleButtonProps) => {
-  const { onToggleFunkyMode } = props;
+  const { onToggleFunkyMode, isToggledByDefault = false } = props;
+  const isFirstToggle = useRef<boolean>(true);
 
   const [isFunkyModeOn, setIsFunkyModeOn] = useState(false);
   const handleClick = () => {
@@ -15,11 +17,22 @@ export const FunkyToggleButton = (props: FunkyToggleButtonProps) => {
   };
 
   useEffect(() => {
-    onToggleFunkyMode(isFunkyModeOn);
-  }, [onToggleFunkyMode, isFunkyModeOn]);
+    if (!isFirstToggle.current) {
+      onToggleFunkyMode(isFunkyModeOn);
+    } else {
+      isFirstToggle.current = false;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isFunkyModeOn]);
+
+  useEffect(() => {
+    if (isToggledByDefault) {
+      setIsFunkyModeOn(isToggledByDefault);
+    }
+  }, [isToggledByDefault]);
 
   const wrapperClassName = `${styles.wrapper} ${
-    isFunkyModeOn && styles.wrapperIsToggled
+    isFunkyModeOn ? styles.wrapperIsToggled : ""
   }`;
 
   return (

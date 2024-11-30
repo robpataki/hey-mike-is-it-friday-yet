@@ -17,7 +17,7 @@
     calc(var(--bg-transform-y) * 0.5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: background-position 1s ease-out;
+  transition: background-position 2s var(--tr-ease-in-out-sine);
 }
 
 .artwork {

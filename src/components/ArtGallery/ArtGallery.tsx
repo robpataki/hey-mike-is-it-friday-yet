@@ -35,8 +35,12 @@ export const ArtGallery = (props: ArtGalleryProps) => {
     setIsFunkyModeOn(isFunky);
   };
 
+  const wrapperClassName = `${styles.wrapper} ${
+    isFunkyModeOn ? styles.wrapperIsFunky : ""
+  }`;
+
   return (
-    <div className={styles.wrapper}>
+    <div className={wrapperClassName}>
       <h1 className="sr-only">Hey Mike, is it Friday yet?</h1>
 
       <Outcome isPositive={isItFriday}>{outcomeText}</Outcome>
@@ -48,6 +52,7 @@ export const ArtGallery = (props: ArtGalleryProps) => {
         />
       ) : null}
       <FunkyToggleButton
+        isToggledByDefault
         onToggleFunkyMode={handleFunkyToggleClick}
       ></FunkyToggleButton>
     </div>
