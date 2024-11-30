@@ -1,37 +1,19 @@
 "use client";
 import { useRef, useState } from "react";
 
-import { data } from "../../data/data";
 import { AsciiArtFrame } from "@/components/AsciiArtFrame/AsciiArtFrame";
 import { Outcome } from "@/components/Outcome/Outcome";
+import styles from "./ArtGallery.module.css";
+import { Artwork } from "@/shared/constants";
 
-type Artwork = { photo: string; id: string };
+type ArtGalleryProps = {
+  outcomeText: string;
+  todaysArtworks: Artwork[];
+  isItFriday: boolean;
+};
 
-const isItFriday = new Date().getDay() === 5;
-
-// Gather artwork from the data
-const { days: daysData } = data;
-const artworks: Artwork[] = [];
-daysData.forEach((day) => {
-  const { photos } = day;
-  photos.forEach((photo) => {
-    artworks.push({ photo: photo.text, id: day.id });
-  });
-});
-
-const outcomeText = isItFriday ? "YES" : "NO";
-const mixedArtworks = [...artworks].sort(() => Math.random() - 0.5);
-const mixedFridayArtworks = mixedArtworks.filter(
-  (artwork) => artwork.id === "friday"
-);
-const mixedNonFridayArtworks = mixedArtworks.filter(
-  (artwork) => artwork.id !== "friday"
-);
-const todaysArtworks = isItFriday
-  ? mixedFridayArtworks
-  : mixedNonFridayArtworks;
-
-export const ArtGallery = () => {
+export const ArtGallery = (props: ArtGalleryProps) => {
+  const { outcomeText, todaysArtworks, isItFriday } = props;
   const [todaysArtwork, setTodaysArtwork] = useState<Artwork | undefined>();
   const artworkIndex = useRef(0);
 
@@ -48,7 +30,7 @@ export const ArtGallery = () => {
   }
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <h1 className="sr-only">Hey Mike, is it Friday yet?</h1>
       <Outcome isPositive={isItFriday}>{outcomeText}</Outcome>
       {todaysArtwork ? (
@@ -57,7 +39,7 @@ export const ArtGallery = () => {
           onClick={rotateArtwork}
         />
       ) : null}
-    </>
+    </div>
   );
 };
 

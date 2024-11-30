@@ -1,16 +1,7 @@
-@keyframes rotateBackgroundGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .artworkWrapper {
+  --bg-transform-x: 0%;
+  --bg-transform-y: 0%;
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -20,38 +11,13 @@
   color: purple;
   font-weight: bold;
 
-  &.bgPink {
-    background-color: pink;
-  }
-
-  &.bgYellow {
-    background-color: yellow;
-  }
-
-  &.bgLime {
-    background-color: lime;
-  }
-
-  &,
-  &.bgGadient {
-    /* background: linear-gradient(
-      15deg,
-      pink,
-      white,
-      lime,
-      orange,
-      yellow,
-      white,
-      purple,
-      red
-    ); */
-    /* background: linear-gradient(45deg, black, purple); */
-    background: linear-gradient(45deg, blue, purple, indigo, blue);
-    /* background-size: 1000% 400%; */
-    /* animation: rotateBackgroundGradient 20s ease-in-out infinite; */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  background: radial-gradient(circle at center in hsl longer hue, red, blue);
+  background-size: 1000% 100%;
+  background-position: calc(var(--bg-transform-x) * 0.5),
+    calc(var(--bg-transform-y) * 0.5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 2s ease-out;
 }
 
 .artwork {
