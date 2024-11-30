@@ -3,29 +3,4 @@
 @tailwind utilities;
 
 @import "./transitions.css";
-
-:root {
-  --focus-inner-border-color: black;
-  --focus-outer-border-color: yellow;
-}
-
-*:focus-visible {
-  outline-color: var(--focus-outer-border-color);
-  outline-style: solid;
-  outline-offset: 0;
-  outline-width: 0.3rem;
-  border-radius: 1rem;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    outline-color: var(--focus-inner-border-color);
-    outline-style: dashed;
-    outline-offset: 0.05rem;
-    outline-width: 0.2rem;
-    border-radius: inherit;
-  }
-}
+@import "./focus.css";

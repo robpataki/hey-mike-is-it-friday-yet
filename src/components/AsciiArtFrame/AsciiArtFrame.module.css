@@ -1,4 +1,7 @@
 .artworkWrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   --bg-transform-x: 0%;
   --bg-transform-y: 0%;
 
@@ -15,6 +18,16 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+  }
+}
+
+.artworkSwapper {
+  width: 100%;
+  height: 100%;
+
+  &:focus-visible {
+    border-radius: 4px;
+    background: rgb(255 255 0 / 60%);
   }
 }
 

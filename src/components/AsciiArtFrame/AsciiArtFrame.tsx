@@ -72,15 +72,20 @@ export const AsciiArtFrame = (props: AsciiArtFrameProps) => {
 
   return (
     <div className={wrapperClassName} ref={wrapperRef}>
-      <button className={styles.artworkFrame} onClick={onClick}>
-        <span className="sr-only">Show new artwork</span>
-        <pre
-          className={styles.artwork}
-          aria-hidden="true"
-          suppressHydrationWarning
-        >
-          {asciiArt}
-        </pre>
+      <button
+        className={`${styles.artworkSwapper} inner-focus`}
+        onClick={onClick}
+      >
+        <div className={styles.artworkFrame}>
+          <span className="sr-only">Show new artwork</span>
+          <pre
+            className={styles.artwork}
+            aria-hidden="true"
+            suppressHydrationWarning
+          >
+            {asciiArt}
+          </pre>
+        </div>
       </button>
     </div>
   );
