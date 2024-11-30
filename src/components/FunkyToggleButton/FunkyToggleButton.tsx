@@ -16,7 +16,7 @@ type FunkyToggleButtonProps = {
 };
 
 /**
- * The Funky Toggle Button uses the Toggle Button with a colour scheme that matches the colour scheme of the message over the artwork. This toggle is positioned in the bottom right corner of the screen.
+ * The Funky Toggle Button uses the Toggle Button with a colour scheme that matches the Answer over the artwork. The toggle is positioned in the bottom right corner of the screen over the artwork.
  * @returns
  */
 export const FunkyToggleButton = (props: FunkyToggleButtonProps) => {
@@ -30,7 +30,9 @@ export const FunkyToggleButton = (props: FunkyToggleButtonProps) => {
 
   useEffect(() => {
     if (!isFirstToggle.current) {
-      onToggleFunkyMode(isFunkyModeOn);
+      if (onToggleFunkyMode) {
+        onToggleFunkyMode(isFunkyModeOn);
+      }
     } else {
       isFirstToggle.current = false;
     }
@@ -50,6 +52,7 @@ export const FunkyToggleButton = (props: FunkyToggleButtonProps) => {
   return (
     <div className={wrapperClassName}>
       <ToggleButton
+        label="Funky mode"
         onChange={handleToggleChange}
         isToggledByDefault={isToggledByDefault}
       />

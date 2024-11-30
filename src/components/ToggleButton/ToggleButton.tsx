@@ -4,6 +4,10 @@ import styles from "./ToggleButton.module.css";
 
 type ToggleButtonProps = {
   /**
+   * Label (screen reader only)
+   */
+  label: string;
+  /**
    * Event callback to handle toggle state changes
    */
   onChange?: (isToggled: boolean) => void;
@@ -19,7 +23,7 @@ type ToggleButtonProps = {
  * @returns
  */
 export const ToggleButton = (props: ToggleButtonProps) => {
-  const { onChange, isToggledByDefault = false } = props;
+  const { label, onChange, isToggledByDefault = false } = props;
   const isFirstToggle = useRef<boolean>(true);
 
   const [isToggled, setIsToggled] = useState(false);
@@ -55,7 +59,9 @@ export const ToggleButton = (props: ToggleButtonProps) => {
         className={styles.button}
         aria-pressed={isToggled}
       >
-        <span className="sr-only">Funky mode {isToggled ? "ON" : "NO"}</span>
+        <span className="sr-only">
+          {label} {isToggled ? "ON" : "OFF"}
+        </span>
         <span className={styles.bubble}></span>
       </button>
     </div>

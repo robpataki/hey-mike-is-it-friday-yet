@@ -7,6 +7,7 @@ const meta: Meta<typeof ToggleButton> = {
   component: ToggleButton,
   title: "components/Toggle Button",
   args: {
+    label: "Toggle is",
     isToggledByDefault: false,
   },
   argTypes: {
