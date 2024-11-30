@@ -2,7 +2,7 @@
 
 Let's ask Mike! Mike has a great system to let everyone know if it's Friday or not. He has many t-shirts he likes to wear on normal, average, ordinary, boring days but not on Friday... Fridays are different. Friday is the day of the YODA t-shirt.
 
-[isitfriday.onenterfra.me](isitfriday.onenterfra.me)
+[https://isitfriday.onenterfra.me](https://isitfriday.onenterfra.me)
 
 <pre style='font-size: 3px;'>
 ......................................:.:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-------------------------------------------------------------------------------------------------------------------+#+=#@@@@@@%%%%%#######%@@@@%=-+%@@@%%@@@@%%%%%%%%%%%%%%*###%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%@@@@%%*====
@@ -144,4 +144,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Live site
 
-[isitfriday.onenterfra.me](isitfriday.onenterfra.me)
+[https://isitfriday.onenterfra.me](https://isitfriday.onenterfra.me)
