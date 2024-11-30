@@ -21,6 +21,9 @@ importers:
       '@chromatic-com/storybook':
         specifier: ^3.2.2
         version: 3.2.2(react@19.0.0-rc-66855b96-20241106)(storybook@8.5.0-alpha.9)
+      '@storybook/addon-a11y':
+        specifier: ^8.4.6
+        version: 8.4.6(storybook@8.5.0-alpha.9)
       '@storybook/addon-essentials':
         specifier: ^8.5.0-alpha.9
         version: 8.5.0-alpha.9(@types/react@18.3.12)(storybook@8.5.0-alpha.9)
@@ -1369,6 +1372,11 @@ packages:
   '@rushstack/eslint-patch@1.10.4':
     resolution: {integrity: sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==}
 
+  '@storybook/addon-a11y@8.4.6':
+    resolution: {integrity: sha512-Z6x/yfStplSROgmBTtiJ8LJgTqPgzW3Q7KXi+l+KoZ0pht6Nz9cYfcyygLCaftBk1ZaL7SDDIrjCP0H1NwfYiQ==}
+    peerDependencies:
+      storybook: ^8.4.6
+
   '@storybook/addon-actions@8.5.0-alpha.9':
     resolution: {integrity: sha512-1aC9U3lGgHKzeuClW45ruw+gq/tksCqx3uNuLDZxvWTC5r8q03sz86GVPC+1wUq1zTWSRSNmF7PPc0eurcWzvg==}
     peerDependencies:
@@ -1393,6 +1401,11 @@ packages:
     resolution: {integrity: sha512-2GfxS8jZCpozAIP6vxJQALlg+r9Q4dugKNCLbgAnZtRqCvBaotfdjNmWyDmZJQoBGcq1J1LdyXIu+cznaQtDjQ==}
     peerDependencies:
       storybook: ^8.5.0-alpha.9
+
+  '@storybook/addon-highlight@8.4.6':
+    resolution: {integrity: sha512-m8wedbqDMbwkP99dNHkHAiAUkx5E7FEEEyLPX1zfkhZWOGtTkavXHH235SGp50zD75LQ6eC/BvgegrzxSQa9Wg==}
+    peerDependencies:
+      storybook: ^8.4.6
 
   '@storybook/addon-highlight@8.5.0-alpha.9':
     resolution: {integrity: sha512-8wL/14ylRYF05JXwNmsjqpmsHWlMkiEWJVcW//W2YpjjwrM+aCkjogJcIEtKKtn4RMdeALU4Hqr3nk7P+peAfA==}
@@ -6075,6 +6088,12 @@ snapshots:
 
   '@rushstack/eslint-patch@1.10.4': {}
 
+  '@storybook/addon-a11y@8.4.6(storybook@8.5.0-alpha.9)':
+    dependencies:
+      '@storybook/addon-highlight': 8.4.6(storybook@8.5.0-alpha.9)
+      axe-core: 4.10.2
+      storybook: 8.5.0-alpha.9
+
   '@storybook/addon-actions@8.5.0-alpha.9(storybook@8.5.0-alpha.9)':
     dependencies:
       '@storybook/global': 5.0.0
@@ -6126,6 +6145,11 @@ snapshots:
       ts-dedent: 2.2.0
     transitivePeerDependencies:
       - '@types/react'
+
+  '@storybook/addon-highlight@8.4.6(storybook@8.5.0-alpha.9)':
+    dependencies:
+      '@storybook/global': 5.0.0
+      storybook: 8.5.0-alpha.9
 
   '@storybook/addon-highlight@8.5.0-alpha.9(storybook@8.5.0-alpha.9)':
     dependencies:

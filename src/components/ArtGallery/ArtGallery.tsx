@@ -2,10 +2,10 @@
 import { useRef, useState } from "react";
 
 import { AsciiArtFrame } from "@/components/AsciiArtFrame/AsciiArtFrame";
-import { Outcome } from "@/components/Outcome/Outcome";
+import { Answer } from "@/components/Answer/Answer";
 import styles from "./ArtGallery.module.css";
 import { Artwork } from "@/shared/constants";
-import FunkyToggleButton from "../ToggleButton/ToggleButton";
+import FunkyToggleButton from "../FunkyToggleButton/FunkyToggleButton";
 
 type ArtGalleryProps = {
   outcomeText: string;
@@ -43,7 +43,7 @@ export const ArtGallery = (props: ArtGalleryProps) => {
     <div className={wrapperClassName}>
       <h1 className="sr-only">Hey Mike, is it Friday yet?</h1>
 
-      <Outcome isPositive={isItFriday}>{outcomeText}</Outcome>
+      <Answer isPositive={isItFriday} text={outcomeText} />
       {todaysArtwork ? (
         <AsciiArtFrame
           asciiArt={todaysArtwork?.photo}

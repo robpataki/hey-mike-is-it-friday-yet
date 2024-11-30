@@ -1,15 +1,12 @@
 .wrapper {
-  --bg-color-off: black;
-  --bg-color-on: black;
-  --color-off: red;
-  --color-on: lime;
+  --bg-color-off: var(--toggle-button-bg-color-off);
+  --bg-color-on: var(--toggle-button-bg-color-on);
+  --color-off: var(--toggle-button-color-off);
+  --color-on: var(--toggle-button-color-on);
+  --transition-easing-method: var(--toggle-button-easing);
 
-  --transition-easing-method: var(--tr-ease-out-expo);
-
-  position: absolute;
+  position: relative;
   display: inline-block;
-  bottom: 1rem;
-  right: 1rem;
   border-radius: 1rem;
   background-color: var(--bg-color-off);
   border: 2px solid var(--color-off);

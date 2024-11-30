@@ -1,6 +1,6 @@
 :root {
-  --focus-inner-border-color: black;
-  --focus-outer-border-color: yellow;
+  --focus-inner-border-color: var(--focus-inner-color);
+  --focus-outer-border-color: var(--focus-outer-color);
 }
 
 *:focus-visible {

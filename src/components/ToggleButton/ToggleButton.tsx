@@ -2,37 +2,50 @@ import { useEffect, useRef, useState } from "react";
 
 import styles from "./ToggleButton.module.css";
 
-type FunkyToggleButtonProps = {
-  onToggleFunkyMode: (isFunkyModeOn: boolean) => void;
+type ToggleButtonProps = {
+  /**
+   * Event callback to handle toggle state changes
+   */
+  onChange?: (isToggled: boolean) => void;
+  /**
+   * Turn on funky mode on initial render
+   */
   isToggledByDefault?: boolean;
 };
 
-export const FunkyToggleButton = (props: FunkyToggleButtonProps) => {
-  const { onToggleFunkyMode, isToggledByDefault = false } = props;
+/**
+ * A basic toggle button with smooth animation and easy to customise colour theming options.
+ * @param props ToggleButtonProps
+ * @returns
+ */
+export const ToggleButton = (props: ToggleButtonProps) => {
+  const { onChange, isToggledByDefault = false } = props;
   const isFirstToggle = useRef<boolean>(true);
 
-  const [isFunkyModeOn, setIsFunkyModeOn] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
   const handleClick = () => {
-    setIsFunkyModeOn(!isFunkyModeOn);
+    setIsToggled(!isToggled);
   };
 
   useEffect(() => {
     if (!isFirstToggle.current) {
-      onToggleFunkyMode(isFunkyModeOn);
+      if (onChange) {
+        onChange(isToggled);
+      }
     } else {
       isFirstToggle.current = false;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isFunkyModeOn]);
+  }, [isToggled]);
 
   useEffect(() => {
     if (isToggledByDefault) {
-      setIsFunkyModeOn(isToggledByDefault);
+      setIsToggled(isToggledByDefault);
     }
   }, [isToggledByDefault]);
 
   const wrapperClassName = `${styles.wrapper} ${
-    isFunkyModeOn ? styles.wrapperIsToggled : ""
+    isToggled ? styles.wrapperIsToggled : ""
   }`;
 
   return (
@@ -40,15 +53,13 @@ export const FunkyToggleButton = (props: FunkyToggleButtonProps) => {
       <button
         onClick={handleClick}
         className={styles.button}
-        aria-pressed={isFunkyModeOn}
+        aria-pressed={isToggled}
       >
-        <span className="sr-only">
-          Funky mode {isFunkyModeOn ? "ON" : "NO"}
-        </span>
+        <span className="sr-only">Funky mode {isToggled ? "ON" : "NO"}</span>
         <span className={styles.bubble}></span>
       </button>
     </div>
   );
 };
 
-export default FunkyToggleButton;
+export default ToggleButton;

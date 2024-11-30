@@ -1,0 +1,13 @@
+:root {
+  --positive-color: lime;
+  --negative-color: #df2833;
+  --focus-inner-color: black;
+  --focus-outer-color: yellow;
+  --button-background-color: black;
+
+  --toggle-button-bg-color-off: black;
+  --toggle-button-bg-color-on: white;
+  --toggle-button-color-off: white;
+  --toggle-button-color-on: black;
+  --toggle-button-easing: var(--tr-ease-out-expo);
+}

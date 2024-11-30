@@ -1,0 +1,11 @@
+.wrapper {
+  --toggle-button-bg-color-off: var(--button-background-color);
+  --toggle-button-bg-color-on: var(--button-background-color);
+  --toggle-button-color-off: var(--negative-color);
+  --toggle-button-color-on: var(--positive-color);
+
+  position: absolute;
+  display: inline-block;
+  bottom: 1rem;
+  right: 1rem;
+}
