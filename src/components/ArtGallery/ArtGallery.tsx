@@ -52,7 +52,6 @@ export const ArtGallery = (props: ArtGalleryProps) => {
         />
       ) : null}
       <FunkyToggleButton
-        isToggledByDefault
         onToggleFunkyMode={handleFunkyToggleClick}
       ></FunkyToggleButton>
     </div>

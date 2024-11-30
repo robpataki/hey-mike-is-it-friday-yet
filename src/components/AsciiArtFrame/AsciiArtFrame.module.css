@@ -1,7 +1,24 @@
-.artworkFrame {
+.artworkWrapper {
   --bg-transform-x: 0%;
   --bg-transform-y: 0%;
 
+  &.artworkWrapperIsFunky {
+    .artworkFrame {
+      background: radial-gradient(
+        circle at center in hsl longer hue,
+        red,
+        blue
+      );
+      background-size: 2000% 100%;
+      background-position: calc(var(--bg-transform-x) * 0.5),
+        calc(var(--bg-transform-y) * 0.5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.artworkFrame {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -10,14 +27,13 @@
   overflow: hidden;
   color: purple;
   font-weight: bold;
-
-  background: radial-gradient(circle at center in hsl longer hue, red, blue);
-  background-size: 1000% 100%;
+  background: linear-gradient(45deg, indigo, blue);
+  background-size: 100% 100%;
   background-position: calc(var(--bg-transform-x) * 0.5),
     calc(var(--bg-transform-y) * 0.5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: background-position 2s var(--tr-ease-in-out-sine);
+  transition: background-position 20s var(--tr-ease-out-quart);
 }
 
 .artwork {

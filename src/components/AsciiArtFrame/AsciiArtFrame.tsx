@@ -12,7 +12,7 @@ type AsciiArtFrameProps = {
 export const AsciiArtFrame = (props: AsciiArtFrameProps) => {
   const { asciiArt, onClick, isFunkyModeOn } = props;
 
-  const wrapperRef = useRef<HTMLButtonElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = useCallback(
     (event: MouseEvent) => {
@@ -66,13 +66,13 @@ export const AsciiArtFrame = (props: AsciiArtFrameProps) => {
     };
   }, [handleMouseMove]);
 
+  const wrapperClassName = `${styles.artworkWrapper} ${
+    isFunkyModeOn ? styles.artworkWrapperIsFunky : ""
+  }`;
+
   return (
-    <div className={styles.artworkWrapper}>
-      <button
-        className={styles.artworkFrame}
-        onClick={onClick}
-        ref={wrapperRef}
-      >
+    <div className={wrapperClassName} ref={wrapperRef}>
+      <button className={styles.artworkFrame} onClick={onClick}>
         <span className="sr-only">Show new artwork</span>
         <pre
           className={styles.artwork}
