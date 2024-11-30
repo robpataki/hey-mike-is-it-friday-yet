@@ -27,7 +27,7 @@
 
   &:focus-visible {
     border-radius: 4px;
-    background: rgb(255 255 0 / 60%);
+    background: rgb(0 0 0 / 50%);
   }
 }
 
@@ -63,7 +63,7 @@
   display: block;
   user-select: none;
 
-  @media screen and (max-aspect-ratio: 1.75 / 1) {
-    --size: calc(100vh / 120);
+  @media screen and (max-aspect-ratio: 1.8 / 1) {
+    --size: calc(100vh / 110);
   }
 }
