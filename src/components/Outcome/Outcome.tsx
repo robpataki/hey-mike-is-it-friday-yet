@@ -9,5 +9,18 @@ type OutcomeProps = {
 export const Outcome = (props: OutcomeProps) => {
   const { children, isPositive } = props;
   const className = `${styles.outcome} ${isPositive ? styles.outcomeYes : ""}`;
-  return <div className={className}>{children}</div>;
+  return (
+    <p className={className}>
+      {children}
+      <br />
+      {children}
+      <br />
+      {children}
+      <br />
+      {children}
+      <br />
+      {children}
+      <br />
+    </p>
+  );
 };
