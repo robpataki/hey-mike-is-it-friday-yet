@@ -36,7 +36,7 @@ export const FunkyToggleButton = (props: FunkyToggleButtonProps) => {
   }`;
 
   return (
-    <div className={wrapperClassName}>
+    <div className={wrapperClassName} aria-live="polite" aria-atomic="true">
       <button
         onClick={handleClick}
         className={styles.button}
