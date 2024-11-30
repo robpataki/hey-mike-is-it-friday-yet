@@ -21,6 +21,14 @@ export const Outcome = (props: OutcomeProps) => {
       <br />
       {children}
       <br />
+      {children}
+      <br />
+      {children}
+      <br />
+      {children}
+      <br />
+      {children}
+      <br />
     </p>
   );
 };
