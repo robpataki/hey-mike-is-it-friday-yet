@@ -5,6 +5,7 @@ import { AsciiArtFrame } from "@/components/AsciiArtFrame/AsciiArtFrame";
 import { Outcome } from "@/components/Outcome/Outcome";
 import styles from "./ArtGallery.module.css";
 import { Artwork } from "@/shared/constants";
+import FunkyToggleButton from "../ToggleButton/ToggleButton";
 
 type ArtGalleryProps = {
   outcomeText: string;
@@ -16,6 +17,7 @@ export const ArtGallery = (props: ArtGalleryProps) => {
   const { outcomeText, todaysArtworks, isItFriday } = props;
   const [todaysArtwork, setTodaysArtwork] = useState<Artwork | undefined>();
   const artworkIndex = useRef(0);
+  const [isFunkyModeOn, setIsFunkyModeOn] = useState(false);
 
   const rotateArtwork = () => {
     artworkIndex.current =
@@ -29,16 +31,25 @@ export const ArtGallery = (props: ArtGalleryProps) => {
     setTodaysArtwork(todaysArtworks[artworkIndex.current]);
   }
 
+  const handleFunkyToggleClick = (isFunky: boolean) => {
+    setIsFunkyModeOn(isFunky);
+  };
+
   return (
     <div className={styles.wrapper}>
       <h1 className="sr-only">Hey Mike, is it Friday yet?</h1>
+
       <Outcome isPositive={isItFriday}>{outcomeText}</Outcome>
       {todaysArtwork ? (
         <AsciiArtFrame
           asciiArt={todaysArtwork?.photo}
           onClick={rotateArtwork}
+          isFunkyModeOn={isFunkyModeOn}
         />
       ) : null}
+      <FunkyToggleButton
+        onToggleFunkyMode={handleFunkyToggleClick}
+      ></FunkyToggleButton>
     </div>
   );
 };

@@ -1,20 +1,21 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import styles from "./AsciiArtFrame.module.css";
 
 type AsciiArtFrameProps = {
   asciiArt: string;
   onClick: () => void;
+  isFunkyModeOn: boolean;
 };
 
 export const AsciiArtFrame = (props: AsciiArtFrameProps) => {
-  const { asciiArt, onClick } = props;
+  const { asciiArt, onClick, isFunkyModeOn } = props;
 
   const wrapperRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
+  const handleMouseMove = useCallback(
+    (event: MouseEvent) => {
       const pointerPoint = { x: event.clientX, y: event.clientY };
       const centerPoint = {
         x: window.innerWidth / 2,
@@ -39,39 +40,49 @@ export const AsciiArtFrame = (props: AsciiArtFrameProps) => {
 
       // Apply the transformation to the element's styling
       if (wrapperRef?.current) {
-        wrapperRef?.current.style.setProperty(
-          "--bg-transform-x",
-          `${transformOffset.x}%`
-        );
-        wrapperRef?.current.style.setProperty(
-          "--bg-transform-y",
-          `${transformOffset.y}%`
-        );
+        if (isFunkyModeOn) {
+          wrapperRef?.current.style.setProperty(
+            "--bg-transform-x",
+            `${transformOffset.x}%`
+          );
+          wrapperRef?.current.style.setProperty(
+            "--bg-transform-y",
+            `${transformOffset.y}%`
+          );
+        } else {
+          wrapperRef?.current.style.setProperty("--bg-transform-x", `0%`);
+          wrapperRef?.current.style.setProperty("--bg-transform-y", `0%`);
+        }
       }
-    };
+    },
+    [isFunkyModeOn]
+  );
 
+  useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [handleMouseMove]);
 
   return (
-    <button
-      className={styles.artworkWrapper}
-      onClick={onClick}
-      ref={wrapperRef}
-    >
-      <span className="sr-only">Show new artwork</span>
-      <pre
-        className={styles.artwork}
-        aria-hidden="true"
-        suppressHydrationWarning
+    <div className={styles.artworkWrapper}>
+      <button
+        className={styles.artworkFrame}
+        onClick={onClick}
+        ref={wrapperRef}
       >
-        {asciiArt}
-      </pre>
-    </button>
+        <span className="sr-only">Show new artwork</span>
+        <pre
+          className={styles.artwork}
+          aria-hidden="true"
+          suppressHydrationWarning
+        >
+          {asciiArt}
+        </pre>
+      </button>
+    </div>
   );
 };
 

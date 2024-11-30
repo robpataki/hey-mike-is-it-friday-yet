@@ -8,6 +8,7 @@
   font-size: calc(100vh * 0.4);
   line-height: 1;
   font-weight: 700;
+  user-select: none;
   color: red;
 
   &.outcomeYes {

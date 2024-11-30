@@ -1,0 +1,59 @@
+.wrapper {
+  --bg-color-off: lime;
+  --bg-color-on: indigo;
+  --color-off: indigo;
+  --color-on: lime;
+
+  --transition-easing-method: var(--tr-ease-out-expo);
+
+  position: absolute;
+  display: inline-block;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 1rem;
+  background-color: var(--bg-color-off);
+  border: 2px solid var(--color-off);
+  transition: background-color 0.4s var(--transition-easing-method),
+    border-color 0.2s var(--transition-easing-method);
+
+  &.wrapperIsToggled {
+    background: var(--bg-color-on);
+    border-color: var(--color-on);
+
+    .bubble {
+      transform: translateX(100%);
+
+      &::before {
+        background-color: var(--color-on);
+      }
+    }
+  }
+}
+
+.button {
+  position: relative;
+  width: 2.8rem;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.bubble {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 50%;
+  transition: transform 0.5s var(--transition-easing-method);
+
+  &::before {
+    content: "";
+    display: block;
+    position: relative;
+    background-color: var(--color-off);
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+    border-radius: 100%;
+  }
+}
