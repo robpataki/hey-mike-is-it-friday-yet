@@ -5,7 +5,7 @@ import { AsciiArtFrame } from "@/components/AsciiArtFrame/AsciiArtFrame";
 import { Answer } from "@/components/Answer/Answer";
 import styles from "./ArtGallery.module.css";
 import { Artwork } from "@/shared/constants";
-import FunkyToggleButton from "../FunkyToggleButton/FunkyToggleButton";
+import { FunkyToggleButton } from "../FunkyToggleButton/FunkyToggleButton";
 
 type ArtGalleryProps = {
   outcomeText: string;
