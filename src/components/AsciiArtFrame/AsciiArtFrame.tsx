@@ -90,5 +90,3 @@ export const AsciiArtFrame = (props: AsciiArtFrameProps) => {
     </div>
   );
 };
-
-export default AsciiArtFrame;

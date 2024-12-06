@@ -29,5 +29,3 @@ export const Answer = (props: AnswerProps) => {
 
   return <p className={className}>{contents}</p>;
 };
-
-export default Answer;

@@ -59,5 +59,3 @@ export const FunkyToggleButton = (props: FunkyToggleButtonProps) => {
     </div>
   );
 };
-
-export default FunkyToggleButton;

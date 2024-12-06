@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-import Layout from "./layout";
-import { data } from "../data/data";
+import Layout from "@/app/layout";
+import { data } from "@/data/data";
 import { ArtGallery } from "@/components/ArtGallery/ArtGallery";
 import { Artwork } from "@/shared/constants";
 

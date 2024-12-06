@@ -57,5 +57,3 @@ export const ArtGallery = (props: ArtGalleryProps) => {
     </div>
   );
 };
-
-export default ArtGallery;
