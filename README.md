@@ -128,6 +128,12 @@ Let's ask Mike! Mike has a great system to let everyone know if it's Friday or n
 ...............................................:-::::::::::::::::::::::::::::::-+++****************####********#######*++**#%%@@@@%%@@@%%@@@@@%%%@@@@@%###########%%%%@@@%%%%%%%%%*-:::::-------::::::::+##*##%*+*=------==---==+#########+--------=====++===+####%#+*#####%%#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%=------------------------:::-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 </pre>
 
+## Loading the correct graphics and answer
+
+The home page is rendered on the server and is using the local date at each request to decide which graphic and final answer to provide to the user.
+
+To check the difference between the server time and client time, load [http://localhost:3000/date](http://localhost:3000/date) locally or [https://isitfriday.onenterfra.me](https://isitfriday.onenterfra.me) in production and toggle JavaScript on and off.
+
 ## Devving
 
 First, run the development server:
@@ -140,7 +146,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deploying
 
-- Github Actions to Github pages
+- The live site is deployed to Vercel.
 
 ## Live site
 
