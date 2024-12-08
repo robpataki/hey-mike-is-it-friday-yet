@@ -6,7 +6,6 @@ import { ArtGallery } from "@/components/ArtGallery/ArtGallery";
 import { Artwork } from "@/shared/constants";
 
 const isItFriday = new Date().getDay() === 5;
-console.log("[IIF] - ", new Date().getDay(), isItFriday);
 
 // Gather artwork from the data
 const { days: daysData } = data;
