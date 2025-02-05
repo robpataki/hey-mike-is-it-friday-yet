@@ -1,0 +1,40 @@
+{
+  "autorun": false,
+  "terminals": [
+    {
+      "name": "Storybook",
+      "open": true,
+      "commands": [
+        "cd ./"
+      ]
+    },
+    {
+      "name": "Git",
+      "open": true,
+      "commands": [
+        "cd ./"
+      ]
+    },
+    {
+      "name": "Next app",
+      "open": true,
+      "commands": [
+        "cd ./"
+      ]
+    },
+    {
+      "name": "Unit tests",
+      "open": true,
+      "commands": [
+        "cd ./apps/funnel"
+      ]
+    },
+    {
+      "name": "Component tests",
+      "open": true,
+      "commands": [
+        "cd ./"
+      ]
+    }
+  ]
+}

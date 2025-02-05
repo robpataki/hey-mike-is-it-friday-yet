@@ -41,3 +41,6 @@ export const Positive: Story = {
     isPositive: true,
   },
 };
+Positive.parameters = {
+  backgrounds: { default: "dark" },
+};

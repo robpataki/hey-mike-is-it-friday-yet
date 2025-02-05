@@ -1,5 +1,6 @@
 // Replace your-framework with the name of your framework
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 
 import { FunkyToggleButton } from "./FunkyToggleButton";
 
@@ -8,6 +9,7 @@ const meta: Meta<typeof FunkyToggleButton> = {
   title: "components/Funky Toggle Button",
   args: {
     isToggledByDefault: false,
+    onToggleFunkyMode: fn(),
   },
   argTypes: {
     isToggledByDefault: {

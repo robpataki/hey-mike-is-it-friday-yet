@@ -1,7 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import "./transitions.css";
 @import "./focus.css";
 @import "./colors.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
