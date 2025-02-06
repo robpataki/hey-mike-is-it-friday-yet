@@ -1,12 +1,11 @@
 // Replace your-framework with the name of your framework
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import { fn, within, expect, userEvent } from "@storybook/test";
 
 import { FunkyToggleButton } from "./FunkyToggleButton";
 
 const meta: Meta<typeof FunkyToggleButton> = {
   component: FunkyToggleButton,
-  title: "components/Funky Toggle Button",
   args: {
     isToggledByDefault: false,
     onToggleFunkyMode: fn(),
@@ -16,20 +15,29 @@ const meta: Meta<typeof FunkyToggleButton> = {
       table: { defaultValue: { summary: "false" } },
     },
   },
-  parameters: { actions: { argTypesRegex: "^on.*" } },
 };
 
 export default meta;
 type Story = StoryObj<typeof FunkyToggleButton>;
 
-export const NotToggled: Story = {
-  args: {
-    isToggledByDefault: false,
+export const Default: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const buttonEl = canvas.getByRole("button", { name: /funky mode off/i });
+    await expect(buttonEl).toBeInTheDocument();
+    await expect(buttonEl).toHaveAttribute("aria-pressed", "false");
   },
 };
+Default.storyName = "Not toggled";
 
 export const Toggled: Story = {
   args: {
     isToggledByDefault: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const buttonEl = canvas.getByRole("button", { name: /funky mode on/i });
+    await expect(buttonEl).toBeInTheDocument();
+    await expect(buttonEl).toHaveAttribute("aria-pressed", "true");
   },
 };
