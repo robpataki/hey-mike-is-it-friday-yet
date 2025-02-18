@@ -5,7 +5,7 @@ import { axe } from "vitest-axe";
 
 import * as stories from "./Answer.stories";
 
-const { Negative, Positive } = composeStories(stories);
+const { Negative } = composeStories(stories);
 
 describe("Answer", () => {
   test("should render correctly", async () => {
